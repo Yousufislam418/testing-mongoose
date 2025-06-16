@@ -32,7 +32,7 @@ app.post('/user-datas', async(req,res)=> {
     const result = await newUser.save();
     res.status(201).json(result);
     }catch{
-     res.send('Not Save');
+     res.send('Not Save Data');
     }
 })
 
