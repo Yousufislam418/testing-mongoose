@@ -29,8 +29,8 @@ app.post('/user-datas', async(req,res)=> {
     try{
     const {name, email, number, password, date} = req.body;
     const newUser = new User({name, email, number, password, date});
-    const result = await newUser.save();
-    res.status(201).json(result);
+    const result = await newUser.save().json();
+    res.status(201);
     }catch{
      res.send('Not Save');
     }
@@ -49,6 +49,21 @@ app.post('/user-datas', async(req,res)=> {
 //     res.status(500).json({ error: 'User creation failed' });
 //   }
 // });
+
+
+
+// Get 
+// app.get('/user-datas', async(req,res)=> {
+//   try{
+
+//     const datas = 
+    
+//   }catch{
+
+//   }
+// })
+
+
 //--------------------------------------------------------------------------->
 
 
