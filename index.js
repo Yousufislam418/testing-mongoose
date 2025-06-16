@@ -30,7 +30,7 @@ app.post('/user-datas', async(req,res)=> {
     const {name, email, number, password, date} = req.body;
     const newUser = new User({name, email, number, password, date});
     const result = await newUser.save();
-    res.send('Data not Store').json(result);
+    res.status('Data not Store').json(result);
     }catch{
      res.send('Not Save');
     }
