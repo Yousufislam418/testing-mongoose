@@ -8,7 +8,7 @@ const UserSchema = new mongoose.Schema({
     date: Number
 },
 {
-    collection: 'slys-messenger',
+    collection: 'user-datas',
     versionKey: false
 });
 

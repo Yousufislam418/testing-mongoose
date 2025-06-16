@@ -17,7 +17,7 @@ app.get('/', async(req,res)=> {
 
 //--------------------------------------------------------------------------->
 // 🟢 MongoDB connect
-mongoose.connect(`${process.env.MONGODB_URI}/user-datas`, {
+mongoose.connect(`${process.env.MONGODB_URI}/testingMongoose`, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
@@ -29,8 +29,8 @@ app.post('/user-datas', async(req,res)=> {
     try{
     const {name, email, number, password, date} = req.body;
     const newUser = new User({name, email, number, password, date});
-    const result = await newUser.save().json();
-    res.status(201);
+    const result = await newUser.save();
+    res.send('Data not Store').json(result);
     }catch{
      res.send('Not Save');
     }
